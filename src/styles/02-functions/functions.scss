@@ -1,0 +1,17 @@
+// Working in rems is annoying.
+// Think in pixels by using this handy function.
+//
+// Example usage: rem(16px)
+@function rem($px, $remBase: null) {
+  $remBaseFontsize: $rem-base;
+
+  @if $remBase {
+    $remBaseFontsize: $remBase;
+  }
+
+  $result: $px / $remBaseFontsize * 1rem;
+  // stylelint-disable
+  @if ($result == 0rem) { $result: 0; } // Turn 0rem into 0
+  // stylelint-enable
+  @return $result;
+}

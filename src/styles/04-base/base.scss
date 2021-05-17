@@ -1,0 +1,76 @@
+html {
+  box-sizing: border-box;
+  color: $color-text-default;
+  font-size: $rem-base;
+  //font: #{$rem-base-xs}/#{$line-height-default} $font-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-variant-ligatures: none;
+
+  //@include mq($bp-sm) { font-size: #{$rem-base-sm}; }
+  //@include mq($bp-md) { font-size: #{$rem-base-md}; }
+  //@include mq($bp-lg) { font-size: #{$rem-base-lg}; }
+  //@include mq($bp-xl) { font-size: #{$rem-base-xl}; }
+}
+
+body.showversion {
+  &:before {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    content: 'CSS Version: ###VERSIONNUMBER###';
+    padding: 10px;
+    font-size: 10px;
+    background-color: darkgrey;
+    color: white;
+    width: 180px;
+    z-index: 99999999999999999999999999999999999;
+  }
+  .jsversion {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    padding: 10px;
+    font-size: 10px;
+    background-color: darkgrey;
+    color: white;
+    width: 180px;
+    z-index: 99999999999999999999999999999999999;
+  }
+}
+
+body {
+  font-size: $font-size-default;
+  position: relative;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+//- Default Link Styles
+
+a:not([class]) {
+  color: $color-text-default;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-text-default-hover;
+  }
+}
+
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
